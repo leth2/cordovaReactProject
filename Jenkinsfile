@@ -1,21 +1,15 @@
 pipeline {
-  agent any
-  stages {
-    stage('tool npm') {
-      steps {
-        nodejs('nodejs') {
-          sh 'npm install'
-        }
-
-      }
+  agent {
+    docker {
+      image 'node:6-alpine'
+      args '-p 3000:3000'
     }
 
+  }
+  stages {
     stage('') {
       steps {
-        nodejs('nodes') {
-          sh 'cordova build android --debug'
-        }
-
+        sh 'npm install'
       }
     }
 

@@ -1,9 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('tool npm') {
       steps {
         tool 'nodejs'
+      }
+    }
+
+    stage('npm install') {
+      steps {
         sh 'npm install'
       }
     }

@@ -10,5 +10,14 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        nodejs('nodes') {
+          sh 'cordova build android --debug'
+        }
+
+      }
+    }
+
   }
 }

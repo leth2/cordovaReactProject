@@ -3,13 +3,19 @@ pipeline {
   stages {
     stage('npm install') {
       steps {
-        sh 'npm install'
+        withNPM() {
+          sh 'npm install'
+        }
+
       }
     }
 
     stage('cordova Build') {
       steps {
-        sh 'cordova build'
+        withNPM() {
+          sh 'cordova build'
+        }
+
       }
     }
 

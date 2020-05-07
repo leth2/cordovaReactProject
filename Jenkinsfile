@@ -1,14 +1,14 @@
 pipeline {
-  agent {
-    node {
-      label 'nodejs'
-    }
-
-  }
+  agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         sh 'npm install'
+        withNPM()
+        node(label: 'nodejs') {
+          sh 'npm install'
+        }
+
       }
     }
 

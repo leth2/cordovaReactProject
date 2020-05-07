@@ -3,16 +3,16 @@ pipeline {
   stages {
     stage('npm install') {
       steps {
-        nodejs('nodes') {
+        nodejs('nodejs') {
           sh 'npm install'
         }
 
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
-        nodejs('nodes') {
+        nodejs('nodejs') {
           sh 'cordova build android --debug'
         }
 

@@ -5,15 +5,7 @@ pipeline {
       steps {
         nodejs('nodejs') {
           sh 'npm install'
-        }
-
-      }
-    }
-
-    stage('error') {
-      steps {
-        nodejs('nodejs') {
-          sh 'cordova build android --debug'
+          sh 'cordova build android --release'
         }
 
       }

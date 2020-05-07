@@ -3,10 +3,8 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        node(label: 'nodejs') {
-          sh 'npm install'
-        }
-
+        tool 'nodejs'
+        sh 'npm install'
       }
     }
 

@@ -1,21 +1,14 @@
 pipeline {
-  agent any
-  stages {
-    stage('npm install') {
-      steps {
-        node(label: 'nodejs') {
-          sh 'npm install'
-        }
-
-      }
+  agent {
+    node {
+      label 'nodejs'
     }
 
-    stage('cordova Build') {
+  }
+  stages {
+    stage('') {
       steps {
-        withNPM() {
-          sh 'cordova build'
-        }
-
+        sh 'npm install'
       }
     }
 

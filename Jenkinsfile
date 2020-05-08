@@ -5,6 +5,7 @@ pipeline {
       steps {
         nodejs('nodejs') {
           sh 'npm install'
+          sh 'npm install -g cordova'
           sh 'cordova build android --debug'
         }
 

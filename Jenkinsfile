@@ -1,24 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('npm install') {
+    stage('cordova build') {
       steps {
         nodejs('nodejs') {
           sh 'npm install'
-          sh 'cordova platform add android'
-        }
-
-      }
-    }
-
-    stage('cordova build android') {
-      steps {
-        nodejs('nodejs') {
           sh 'cordova build android --debug'
         }
 
       }
     }
 
+  }
+  environment {
+    PATH = '/usr/local/bin:/usr/bin:/bin'
   }
 }

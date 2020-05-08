@@ -18,7 +18,7 @@ pipeline {
 
     stage('get artifact') {
       steps {
-        archiveArtifacts(artifacts: '*/build/**/*.apk', onlyIfSuccessful: true)
+        archiveArtifacts(artifacts: '*/platforms/android/app/build/outputs/apk/**/*.apk', onlyIfSuccessful: true)
       }
     }
 

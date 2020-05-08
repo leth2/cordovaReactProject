@@ -7,14 +7,14 @@ pipeline {
           sh 'npm install'
           sh 'npm install -g cordova'
           sh 'cordova platform add android'
-          sh 'cordova build android --debug'
+          withGradle() {
+            sh 'cordova build android --debug'
+          }
+
         }
 
       }
     }
 
-  }
-  environment {
-    PATH = '/usr/local/bin:/usr/bin:/bin'
   }
 }

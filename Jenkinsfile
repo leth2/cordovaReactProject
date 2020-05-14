@@ -22,5 +22,11 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        sshPublisher(alwaysPublishFromMaster: true)
+      }
+    }
+
   }
 }
